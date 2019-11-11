@@ -1,0 +1,150 @@
+{
+  "name": "newpoll",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "MMoFc",
+  "actions": [
+    {
+      "info": "1",
+      "find": "Server VIP",
+      "storage": "1",
+      "varName": "vipcheck",
+      "name": "Find Role"
+    },
+    {
+      "info": "1",
+      "find": "Server VIP",
+      "storage": "1",
+      "varName": "boostercheck",
+      "name": "Find Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "boostercheck",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "18",
+      "name": "Check If Member has Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "role": "3",
+      "varName2": "vipcheck",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "18",
+      "name": "Check If Member has Role"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "author",
+      "name": "Store Member Info"
+    },
+    {
+      "info": "1",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "polldesc",
+      "name": "Store Command Params"
+    },
+    {
+      "title": "**NEW POLL**",
+      "author": "",
+      "color": "FF0000",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "sendpoll",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "sendpoll",
+      "message": "Poll Author: ${tempVars(\"author\")}\n\nPoll Description: \n${tempVars(\"polldesc\")}\n\nPoll Timestamp:",
+      "name": "Set Embed Description"
+    },
+    {
+      "info": "1",
+      "find": "🏛┊polls",
+      "storage": "1",
+      "varName": "pollchan",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "sendpoll",
+      "channel": "5",
+      "varName2": "pollchan",
+      "name": "Send Embed Message"
+    },
+    {
+      "channel": "5",
+      "varName": "pollchan",
+      "message": "@PollPings",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "info": "0",
+      "find": "641661978158563359",
+      "storage": "1",
+      "varName": "coffeefind",
+      "name": "Find Member"
+    },
+    {
+      "member": "2",
+      "varName": "coffeefind",
+      "info": "6",
+      "storage": "1",
+      "varName2": "botmsg",
+      "name": "Store Member Info"
+    },
+    {
+      "storage": "1",
+      "varName": "botmsg",
+      "emoji": "4",
+      "varName2": "✅",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "storage": "1",
+      "varName": "botmsg",
+      "emoji": "4",
+      "varName2": "❎",
+      "varName3": "",
+      "name": "Add Reaction"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Poll sent! :white_check_mark:",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "**ERROR:** You need to be a Nitro Booster, or a VIP to use this command. Sad :(",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    }
+  ]
+}
